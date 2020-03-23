@@ -49,6 +49,10 @@ class MainActivityPresenter @Inject constructor(
         hasAbdominalPain: Boolean
     ) {
         val symptomList = mutableListOf<String>()
+        if(hasNoSymptoms){
+            view?.openThankyouScreen()
+            return
+        }
         if(hasCough){
             symptomList.add("cough")
         }

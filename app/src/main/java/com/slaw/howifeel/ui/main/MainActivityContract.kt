@@ -3,6 +3,7 @@ package com.slaw.howifeel.ui.main
 interface MainActivityContract {
     interface View {
         fun showMessage(message: String)
+        fun openThankyouScreen()
     }
 
     interface Presenter {

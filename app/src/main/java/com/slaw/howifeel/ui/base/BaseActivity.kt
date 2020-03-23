@@ -28,6 +28,10 @@ open class BaseActivity: AppCompatActivity() {
                 openWebPage()
                 true
             }
+            android.R.id.home -> {
+                finish()
+                true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
 

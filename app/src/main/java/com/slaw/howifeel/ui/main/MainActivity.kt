@@ -18,9 +18,11 @@ import com.slaw.howifeel.component.ActivityScope
 import com.slaw.howifeel.component.ApplicationComponent
 import com.slaw.howifeel.ui.base.BaseActivity
 import com.slaw.howifeel.ui.login.appComponent
+import com.slaw.howifeel.ui.thankyou.ThankyouActivity
 import dagger.BindsInstance
 import dagger.Component
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.util.jar.Manifest
 import javax.inject.Inject
@@ -73,7 +75,13 @@ class MainActivity : BaseActivity(),MainActivityContract.View, CompoundButton.On
                 }
             }).check()
         setContentView(R.layout.activity_main)
+        supportActionBar?.setHomeButtonEnabled(true)
         setupView()
+    }
+
+    override fun openThankyouScreen() {
+        startActivity<ThankyouActivity>()
+        finish()
     }
 
     private fun setupView() {

@@ -1,96 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.main.MainActivity">
+    android:fillViewport="true"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Symptoms"/>
-        <CheckBox
-            android:id="@+id/no_symptoms"
-            android:visibility="gone"
-            android:text="No Symptoms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/cough"
-            android:text="Cough"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/short_breath"
-            android:text="Short breath"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/fever"
-            android:text="Fever"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/runny_nose"
-            android:text="Runny nose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/sneezing"
-            android:text="Sneezing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/sore_throat"
-            android:text="Sore throat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/headache"
-            android:text="Headache"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/fatigue"
-            android:text="Fatigue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/chills"
-            android:text="Chills"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/body_ache"
-            android:text="Body ache"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/diarrehea"
-            android:text="Diarrehea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/vomiting"
-            android:text="Vomiting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <CheckBox
-            android:id="@+id/abdominal_pain"
-            android:text="Abdominal pain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/submit"
-        android:text="Submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white"
+        tools:context=".ui.main.MainActivity">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Which symptoms are you having?"
+                android:textColor="@color/blueGrey700"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/no_symptoms"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="No Symptoms" />
+
+            <CheckBox
+                android:id="@+id/cough"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cough" />
+
+            <CheckBox
+                android:id="@+id/short_breath"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Short breath" />
+
+            <CheckBox
+                android:id="@+id/fever"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fever" />
+
+            <CheckBox
+                android:id="@+id/runny_nose"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Runny nose" />
+
+            <CheckBox
+                android:id="@+id/sneezing"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sneezing" />
+
+            <CheckBox
+                android:id="@+id/sore_throat"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sore throat" />
+
+            <CheckBox
+                android:id="@+id/headache"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Headache" />
+
+            <CheckBox
+                android:id="@+id/fatigue"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fatigue" />
+
+            <CheckBox
+                android:id="@+id/chills"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chills" />
+
+            <CheckBox
+                android:id="@+id/body_ache"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Body ache" />
+
+            <CheckBox
+                android:id="@+id/diarrehea"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diarrehea" />
+
+            <CheckBox
+                android:id="@+id/vomiting"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vomiting" />
+
+            <CheckBox
+                android:id="@+id/abdominal_pain"
+                style="@style/symptomCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abdominal pain" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="Submit"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</ScrollView>

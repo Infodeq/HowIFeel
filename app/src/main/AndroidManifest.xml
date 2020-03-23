@@ -13,22 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.thankyou.ThankyouActivity"></activity>
+        <activity android:name=".ui.thankyou.ThankyouActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" ></activity>
         <activity android:name=".ui.howyoufeeling.HowAreYouFeelingActivity" />
-        <activity android:name=".ui.otp.OtpActivity" />
-        <activity android:name=".ui.login.LoginActivity">
-
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-        </activity>
-        <activity android:name=".ui.main.MainActivity">
+        <activity android:name=".ui.otp.OtpActivity"
+            android:parentActivityName=".ui.main.MainActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
-
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".ui.login.LoginActivity">
+
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
+        </activity>
+        <activity android:name=".ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

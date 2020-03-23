@@ -48,8 +48,10 @@ class OtpActivity : BaseActivity(), OtpContract.View {
             .build()
             .inject(this)
         setContentView(R.layout.activity_otp)
+        supportActionBar?.setHomeButtonEnabled(true)
         presenter.start()
         setupView()
+
     }
 
     private fun setupView() {
