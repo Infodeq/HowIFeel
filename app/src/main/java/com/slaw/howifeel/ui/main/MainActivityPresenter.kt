@@ -10,6 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import org.joda.time.DateTime
+import timber.log.Timber
 import javax.inject.Inject
 
 @Module
@@ -94,9 +95,8 @@ class MainActivityPresenter @Inject constructor(
             symptomList.add("abdominal pain")
         }
         val symptomRequest = SymptomRequest(
-            CoarseLocation(gps[0], gps[1]),
-            dataManager.clientToken,
-            DateTime.now().toString(),
+            CoarseLocation(gps[0].toString(), gps[1].toString()),
+//            DateTime.now().toString(),
             symptomList
         )
         compositeDisposable.add(
@@ -106,9 +106,11 @@ class MainActivityPresenter @Inject constructor(
                 .subscribeBy(
                     onComplete = {
                         dataManager.shownSymptom = true
-                        view?.showMessage("Thank you for your response")
+//                        view?.showMessage("Thank you for your response")
+                        view?.openThankyouScreen()
                         view?.enableSubmit(true)
                     }, onError = {
+                        Timber.e(it.localizedMessage)
                         view?.showMessage("${it.localizedMessage}\nSomething went wrong. Please try again.")
                         view?.enableSubmit(true)
                     }

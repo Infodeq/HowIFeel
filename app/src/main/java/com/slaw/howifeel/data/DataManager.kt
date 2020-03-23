@@ -45,7 +45,10 @@ class DataManagerImp @Inject constructor(
             }
     }
 
-    override fun sendSymptom(symptomRequest: SymptomRequest) = apiManager.sendSymptom(symptomRequest)
+    override fun sendSymptom(symptomRequest: SymptomRequest):Completable{
+        return apiManager.sendSymptom(sharedPreferenceManager.clientToken, symptomRequest)
+    }
+
     override var shownSymptom = sharedPreferenceManager.shownSymptom
 
     override val clientToken: String

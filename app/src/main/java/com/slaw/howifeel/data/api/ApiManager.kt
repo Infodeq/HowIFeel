@@ -13,7 +13,7 @@ import javax.inject.Singleton
 interface ApiManager {
     fun login(loginRequestType: LoginRequest): Completable
     fun sendOtp(otpSendRequest: OtpSendRequest): Single<ApiResponse>
-    fun sendSymptom(symptomRequest: SymptomRequest): Completable
+    fun sendSymptom(accessToken: String, symptomRequest: SymptomRequest): Completable
 }
 @Singleton
 class ApiManagerImpl @Inject constructor(
@@ -21,6 +21,6 @@ class ApiManagerImpl @Inject constructor(
 ): ApiManager {
     override fun login(loginRequestType: LoginRequest) = webService.auth(loginRequestType)
     override fun sendOtp(otpSendRequest: OtpSendRequest) = webService.sendOtp(otpSendRequest)
-    override fun sendSymptom(symptomRequest: SymptomRequest) = webService.sendSymptom(symptomRequest)
+    override fun sendSymptom(accessToken: String,symptomRequest: SymptomRequest) = webService.sendSymptom("access_token=$accessToken",symptomRequest)
 
 }

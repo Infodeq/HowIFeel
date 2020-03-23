@@ -8,6 +8,7 @@ import com.slaw.howifeel.data.api.payload.symptomPost.SymptomRequest
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface WebService {
@@ -18,5 +19,8 @@ interface WebService {
     fun sendOtp(@Body otpSendRequest: OtpSendRequest): Single<ApiResponse>
 
     @POST("health/status/")
-    fun sendSymptom(@Body symptomRequest: SymptomRequest): Completable
+    fun sendSymptom(
+        @Header("Cookie") accessToken: String,
+        @Body symptomRequest: SymptomRequest
+    ): Completable
 }
