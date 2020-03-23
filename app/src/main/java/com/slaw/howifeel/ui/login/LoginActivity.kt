@@ -32,6 +32,10 @@ class LoginActivity : BaseActivity(), LoginContract.View {
         setupView()
     }
 
+    override fun enableLoginButton(enable: Boolean) {
+        login.isEnabled = enable
+    }
+
     private fun setupView() {
         login.setOnClickListener {
             val gender = getGenderFromRadioButton()

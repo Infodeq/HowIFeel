@@ -4,6 +4,7 @@ interface MainActivityContract {
     interface View {
         fun showMessage(message: String)
         fun openThankyouScreen()
+        fun enableSubmit(enable: Boolean)
     }
 
     interface Presenter {

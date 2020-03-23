@@ -33,6 +33,7 @@ class OtpPresenter @Inject constructor(
             view?.showError("Please enter the code.")
             return
         }
+        view?.enableNextButton(false)
        compositeDisposable.add(
            dataManager.otpEntered(code)
                .subscribeOn(Schedulers.io())
@@ -41,7 +42,8 @@ class OtpPresenter @Inject constructor(
                    onSuccess = {
                        view?.openHowYouFeelingActivity()
                    }, onError = {
-                        view?.showError("Something went wronf. Please try again")
+                        view?.showError(it.localizedMessage?:"Something went wrong. Please try again")
+                       view?.enableNextButton(true)
                    }
                )
        )

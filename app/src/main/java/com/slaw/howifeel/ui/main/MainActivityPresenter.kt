@@ -53,6 +53,7 @@ class MainActivityPresenter @Inject constructor(
             view?.openThankyouScreen()
             return
         }
+        view?.enableSubmit(false)
         if(hasCough){
             symptomList.add("cough")
         }
@@ -81,7 +82,7 @@ class MainActivityPresenter @Inject constructor(
             symptomList.add("chills")
         }
         if(hasBodyAche){
-            symptomList.add("body ache")
+            symptomList.add("body aches")
         }
         if(hasDiarrehea){
             symptomList.add("diarrhea")
@@ -106,8 +107,10 @@ class MainActivityPresenter @Inject constructor(
                     onComplete = {
                         dataManager.shownSymptom = true
                         view?.showMessage("Thank you for your response")
+                        view?.enableSubmit(true)
                     }, onError = {
                         view?.showMessage("${it.localizedMessage}\nSomething went wrong. Please try again.")
+                        view?.enableSubmit(true)
                     }
                 )
         )

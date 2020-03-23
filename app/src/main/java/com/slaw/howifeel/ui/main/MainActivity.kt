@@ -79,6 +79,10 @@ class MainActivity : BaseActivity(),MainActivityContract.View, CompoundButton.On
         setupView()
     }
 
+    override fun enableSubmit(enable: Boolean) {
+        submit.isEnabled = enable
+    }
+
     override fun openThankyouScreen() {
         startActivity<ThankyouActivity>()
         finish()

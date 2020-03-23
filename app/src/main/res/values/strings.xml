@@ -4,4 +4,16 @@
     <string name="how_i_feel">How I Feel</string>
     <string name="dont_forget_to_log_symptoms">Please log your symptoms.</string>
     <string name="reminder_to_log_symptoms">Reminder to log symptoms</string>
+    <string name="how_are_you_feeling_today">How are you feeling today?</string>
+    <string name="i_m_feeling_good">I\'m feeling good!</string>
+    <string name="i_m_not_feeling_really_good">I\'m not feeling really good..</string>
+    <string name="enter_the_code_you_ve_received">Enter the code you\'ve received</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="login">Login</string>
+    <string name="year_of_birth">Year of birth</string>
+    <string name="prefer_not_to_say">Prefer not to say</string>
+    <string name="thank_you_for_your_response_please_report_back_if_you_feel_any_symptoms">Thank you for your response. Please report back if you feel any symptoms</string>
+    <string name="done">Done</string>
 </resources>

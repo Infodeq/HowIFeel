@@ -1,5 +1,6 @@
 package com.slaw.howifeel.ui.login
 
+import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
 import com.slaw.howifeel.data.DataManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -29,12 +30,11 @@ class LoginPresenter @Inject constructor(
         gender: String,
         yearBirth: String
     ) {
-//        view?.showError("$countryCode")
-//        return
         if(phoneNumber.isEmpty()||yearBirth.isEmpty()){
             view?.showError("Please enter all the fields")
             return
         }
+        view?.enableLoginButton(false)
         compositeDisposable.add(
             dataManager.login(countryCode, phoneNumber, gender, yearBirth)
                 .subscribeOn(Schedulers.io())
@@ -42,8 +42,16 @@ class LoginPresenter @Inject constructor(
                 .subscribeBy(
                     onComplete = {
                         view?.openOtpActivity()
+                        view?.enableLoginButton(true)
                     }, onError = {
-                        view?.showError(it.localizedMessage?:"")
+                        if(it is HttpException){
+                            if(it.code()==403){
+                                view?.showError("Too many attempts. PLease try again later")
+                            }
+                        }else{
+                            view?.showError(it.localizedMessage?:"")
+                        }
+                        view?.enableLoginButton(true)
                     }
                 )
         )

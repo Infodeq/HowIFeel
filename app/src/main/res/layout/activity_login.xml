@@ -45,7 +45,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gender" />
+                android:text="@string/gender" />
 
             <RadioGroup
                 android:id="@+id/gender"
@@ -58,19 +58,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Male" />
+                    android:text="@string/male" />
 
                 <RadioButton
                     android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Female" />
+                    android:text="@string/female" />
 
                 <RadioButton
                     android:id="@+id/prefer_not_say"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prefer not to say" />
+                    android:text="@string/prefer_not_to_say" />
             </RadioGroup>
         </LinearLayout>
 
@@ -83,7 +83,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Year of birth" />
+                android:text="@string/year_of_birth" />
 
             <EditText
                 android:id="@+id/yearBirth"
@@ -100,8 +100,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="Login"
+            android:background="@drawable/primary_button"
+            android:text="@string/login"
             android:textColor="@color/white" />
     </LinearLayout>
 

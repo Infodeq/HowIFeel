@@ -5,6 +5,7 @@ interface LoginContract {
         fun openHowYouFeelingActivity()
         fun showError(message: String)
         fun openOtpActivity()
+        fun enableLoginButton(enable: Boolean)
     }
 
     interface Presenter {

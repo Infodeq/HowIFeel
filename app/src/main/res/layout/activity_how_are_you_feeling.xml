@@ -5,19 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+    android:padding="40dp"
     tools:context=".ui.howyoufeeling.HowAreYouFeelingActivity">
     <TextView
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@color/blueGrey700"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How are you feeling today?"/>
+        android:text="@string/how_are_you_feeling_today"/>
     <Button
         android:id="@+id/im_feeling_good"
-        android:text="I'm feeling good!"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="@string/i_m_feeling_good"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/im_having_some_symptoms"
-        android:text="I'm not feeling really good.."
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:text="@string/i_m_not_feeling_really_good"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

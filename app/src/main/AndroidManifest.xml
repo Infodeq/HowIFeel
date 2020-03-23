@@ -14,8 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.thankyou.ThankyouActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" ></activity>
-        <activity android:name=".ui.howyoufeeling.HowAreYouFeelingActivity" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity android:name=".ui.howyoufeeling.HowAreYouFeelingActivity" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
         <activity android:name=".ui.otp.OtpActivity"
             android:parentActivityName=".ui.main.MainActivity">
 <!--            <intent-filter>-->

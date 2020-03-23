@@ -54,6 +54,10 @@ class OtpActivity : BaseActivity(), OtpContract.View {
 
     }
 
+    override fun enableNextButton(enable: Boolean) {
+        next.isEnabled = enable
+    }
+
     private fun setupView() {
         next.setOnClickListener {
             presenter.otpEntered(codeText.text.toString())

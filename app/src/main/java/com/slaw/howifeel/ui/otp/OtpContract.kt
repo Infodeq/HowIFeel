@@ -4,6 +4,7 @@ interface OtpContract {
     interface View {
         fun showError(error: String)
         fun openHowYouFeelingActivity()
+        fun enableNextButton(enable: Boolean)
     }
 
     interface Presenter {
