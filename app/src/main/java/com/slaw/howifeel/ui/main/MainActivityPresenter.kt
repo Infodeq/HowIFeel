@@ -96,7 +96,6 @@ class MainActivityPresenter @Inject constructor(
         }
         val symptomRequest = SymptomRequest(
             CoarseLocation(gps[0].toString(), gps[1].toString()),
-//            DateTime.now().toString(),
             symptomList
         )
         compositeDisposable.add(

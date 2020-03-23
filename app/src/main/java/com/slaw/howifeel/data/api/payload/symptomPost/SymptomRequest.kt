@@ -9,12 +9,6 @@ data class SymptomRequest(
 	@field:SerializedName("geo_location")
 	val geoLocation: CoarseLocation,
 
-//	@field:SerializedName("client_token")
-//	val clientToken: String,
-
-//	@field:SerializedName("report_time")
-//	val reportTime: String,
-
 	@field:SerializedName("symptoms")
 	val symptoms: List<String>
 )
