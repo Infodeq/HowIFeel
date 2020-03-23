@@ -36,7 +36,7 @@ class LoginActivity : BaseActivity(), LoginContract.View {
         login.setOnClickListener {
             val gender = getGenderFromRadioButton()
             presenter.loginClicked(
-                ccp.selectedCountryCode, phonenumber.text.toString(), gender,yearBirth.text.toString()
+                ccp.selectedCountryNameCode, phonenumber.text.toString(), gender,yearBirth.text.toString()
             )
         }
     }
@@ -47,9 +47,9 @@ class LoginActivity : BaseActivity(), LoginContract.View {
 
     private fun getGenderFromRadioButton(): String {
         return when(gender.checkedRadioButtonId){
-            R.id.male -> "male"
-            R.id.female -> "female"
-            else -> "na"
+            R.id.male -> "M"
+            R.id.female -> "F"
+            else -> "U"
         }
     }
 

@@ -1,5 +1,6 @@
 package com.slaw.howifeel.data.api
 
+import com.slaw.howifeel.data.api.payload.apiResponse.ApiResponse
 import com.slaw.howifeel.data.api.payload.loginRequest.LoginRequest
 import com.slaw.howifeel.data.api.payload.otpResponse.OtpResponse
 import com.slaw.howifeel.data.api.payload.otpResponse.OtpSendRequest
@@ -11,7 +12,7 @@ import javax.inject.Singleton
 
 interface ApiManager {
     fun login(loginRequestType: LoginRequest): Completable
-    fun sendOtp(otpSendRequest: OtpSendRequest): Single<OtpResponse>
+    fun sendOtp(otpSendRequest: OtpSendRequest): Single<ApiResponse>
     fun sendSymptom(symptomRequest: SymptomRequest): Completable
 }
 @Singleton

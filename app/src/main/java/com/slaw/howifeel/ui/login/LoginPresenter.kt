@@ -29,6 +29,8 @@ class LoginPresenter @Inject constructor(
         gender: String,
         yearBirth: String
     ) {
+//        view?.showError("$countryCode")
+//        return
         if(phoneNumber.isEmpty()||yearBirth.isEmpty()){
             view?.showError("Please enter all the fields")
             return

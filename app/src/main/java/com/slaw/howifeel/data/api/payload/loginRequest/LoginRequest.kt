@@ -7,10 +7,10 @@ import com.google.gson.annotations.SerializedName
 data class LoginRequest(
 
 	@field:SerializedName("phone")
-	val phone: String? = null,
+	val phone: String,
 
-	@field:SerializedName("country")
-	val country: String? = null,
+	@field:SerializedName("country_code")
+	val country: String,
 
 	@field:SerializedName("gender")
 	val gender: String? = null,
