@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HowIFeel</string>
+    <string name="next">Next</string>
+    <string name="how_i_feel">How I Feel</string>
+    <string name="dont_forget_to_log_symptoms">Please log your symptoms.</string>
+    <string name="reminder_to_log_symptoms">Reminder to log symptoms</string>
 </resources>

@@ -24,7 +24,7 @@ class NetworkModule {
     @Provides
     @Singleton
     fun retrofitInstance(client: OkHttpClient.Builder) = Retrofit.Builder()
-        .baseUrl("https://hooks.slack.com/")
+        .baseUrl("https://api.infodeq.com/v1/")
         .client(client.build())
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

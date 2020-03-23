@@ -1,11 +1,14 @@
 package com.slaw.howifeel.module
 
 
+import android.preference.PreferenceManager
 import com.slaw.howifeel.HowIFeelApplication
 import com.slaw.howifeel.data.DataManager
 import com.slaw.howifeel.data.DataManagerImp
 import com.slaw.howifeel.data.api.ApiManager
 import com.slaw.howifeel.data.api.ApiManagerImpl
+import com.slaw.howifeel.data.prefs.SharedPreferenceManager
+import com.slaw.howifeel.data.prefs.SharedPreferenceManagerImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -20,6 +23,14 @@ class ApplicationModule(private val application: HowIFeelApplication) {
     @Provides
     @Singleton
     fun provideApiManager(apiManagerImpl: ApiManagerImpl) = apiManagerImpl as ApiManager
+
+    @Provides
+    @Singleton
+    fun sharedPrefManager(sharedPrefManagerImp: SharedPreferenceManagerImpl) = sharedPrefManagerImp as SharedPreferenceManager
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences() = PreferenceManager.getDefaultSharedPreferences(application)
 
 //    @Provides
 //    @Singleton
