@@ -8,10 +8,12 @@ import android.widget.CompoundButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.karumi.dexter.Dexter
+import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
 import com.slaw.howifeel.R
 import com.slaw.howifeel.component.ActivityScope
@@ -58,17 +60,17 @@ class MainActivity : BaseActivity(),MainActivityContract.View, CompoundButton.On
             .build()
             .inject(this)
         Dexter.withActivity(this)
-            .withPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION)
-            .withListener(object : PermissionListener {
-                override fun onPermissionGranted(response: PermissionGrantedResponse) {
+            .withPermissions(
+                android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            )
+            .withListener(object : MultiplePermissionsListener {
+                override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
 
-                }
-
-                override fun onPermissionDenied(response: PermissionDeniedResponse) { /* ... */
                 }
 
                 override fun onPermissionRationaleShouldBeShown(
-                    permission: PermissionRequest?,
+                    permissions: MutableList<PermissionRequest>?,
                     token: PermissionToken?
                 ) {
                     token?.continuePermissionRequest();

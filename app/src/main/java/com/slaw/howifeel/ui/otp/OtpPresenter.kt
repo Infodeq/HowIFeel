@@ -1,5 +1,6 @@
 package com.slaw.howifeel.ui.otp
 
+import com.slaw.howifeel.BuildConfig
 import com.slaw.howifeel.data.DataManager
 import dagger.Binds
 import dagger.Module
@@ -29,6 +30,10 @@ class OtpPresenter @Inject constructor(
     }
 
     override fun otpEntered(code: String) {
+//        if(BuildConfig.DEBUG){
+//            view?.openHowYouFeelingActivity()
+//            return
+//        }
         if(code.isEmpty()){
             view?.showError("Please enter the code.")
             return

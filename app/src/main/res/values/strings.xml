@@ -16,4 +16,6 @@
     <string name="prefer_not_to_say">Prefer not to say</string>
     <string name="thank_you_for_your_response_please_report_back_if_you_feel_any_symptoms">Thank you for your response. Please report back if you feel any symptoms</string>
     <string name="done">Done</string>
+    <string name="about_section">"How-I-Feel" is designed by us to keep you aware of near by health threats.
+        It\'s open-source https://github.com/Infodeq/HowIFeel and accessible to all. If you have questions, contact us at support@infodeq.com</string>
 </resources>

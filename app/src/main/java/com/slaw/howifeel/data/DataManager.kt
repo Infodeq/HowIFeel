@@ -9,6 +9,8 @@ import com.slaw.howifeel.data.api.payload.symptomPost.SymptomRequest
 import com.slaw.howifeel.data.prefs.SharedPreferenceManager
 import io.reactivex.Completable
 import io.reactivex.Single
+import okhttp3.ResponseBody
+import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -16,7 +18,7 @@ interface DataManager {
     fun login(countryCode: String, phoneNumber: String, gender: String, yearBirth: String): Completable
     fun otpEntered(code: String): Single<ApiResponse>
     fun sendSymptom(symptomRequest: SymptomRequest): Completable
-
+    fun downloadCoordinates(): Single<Response<ResponseBody>>
     var shownSymptom: Boolean
     val clientToken: String
 }
@@ -48,6 +50,8 @@ class DataManagerImp @Inject constructor(
     override fun sendSymptom(symptomRequest: SymptomRequest):Completable{
         return apiManager.sendSymptom(sharedPreferenceManager.clientToken, symptomRequest)
     }
+
+    override fun downloadCoordinates() = apiManager.downloadCoordinates()
 
     override var shownSymptom = sharedPreferenceManager.shownSymptom
 

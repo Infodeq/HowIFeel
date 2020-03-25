@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.slaw.howifeel.R
+import org.jetbrains.anko.alert
 import org.jetbrains.anko.toast
 
 
@@ -26,6 +27,10 @@ open class BaseActivity: AppCompatActivity() {
         return when(item.itemId){
             R.id.privacy_policy -> {
                 openWebPage()
+                true
+            }
+            R.id.about -> {
+                alert(R.string.about_section).show()
                 true
             }
             android.R.id.home -> {

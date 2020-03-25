@@ -13,8 +13,7 @@ import com.slaw.howifeel.ui.login.appComponent
 import dagger.BindsInstance
 import dagger.Component
 import kotlinx.android.synthetic.main.activity_otp.*
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 import javax.inject.Inject
 
 
@@ -64,7 +63,7 @@ class OtpActivity : BaseActivity(), OtpContract.View {
         }
     }
     override fun openHowYouFeelingActivity() {
-        startActivity<HowAreYouFeelingActivity>()
+        startActivity(intentFor<HowAreYouFeelingActivity>().clearTask().newTask())
         finish()
     }
 

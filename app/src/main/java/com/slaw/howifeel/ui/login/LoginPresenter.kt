@@ -1,6 +1,7 @@
 package com.slaw.howifeel.ui.login
 
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
+import com.slaw.howifeel.BuildConfig
 import com.slaw.howifeel.data.DataManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -30,6 +31,10 @@ class LoginPresenter @Inject constructor(
         gender: String,
         yearBirth: String
     ) {
+//        if(BuildConfig.DEBUG){
+//            view?.openOtpActivity()
+//            return
+//        }
         if(phoneNumber.isEmpty()||yearBirth.isEmpty()){
             view?.showError("Please enter all the fields")
             return
