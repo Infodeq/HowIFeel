@@ -19,6 +19,6 @@
         android:layout_margin="16dp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:text="Track spread of corona near you\n Avoid affected areas in neighbourhood" />
+        android:text="Track spread of COVID-19\nAvoid affected areas." />
 
 </LinearLayout>

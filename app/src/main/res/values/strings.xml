@@ -21,9 +21,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="we_need_location_access_to_show_your_affected_neighbourhood">We need location access to show your affected neighbourhood</string>
+    <string name="we_need_location_access_to_show_your_affected_neighbourhood">Allow location data in anonymous health reports.</string>
     <string name="we_need_this_info">We need this info to proceed.</string>
     <string name="ok">OK</string>
-    <string name="title_location_permission">Please provide us location access.</string>
-    <string name="text_location_permission">We need location access to show your affected neighbourhood.</string>
+    <string name="title_location_permission">Please provide location access.</string>
+    <string name="text_location_permission">Location data is used in anonymous health reports.</string>
 </resources>
