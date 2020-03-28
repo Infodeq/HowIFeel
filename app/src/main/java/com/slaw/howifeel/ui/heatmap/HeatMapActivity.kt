@@ -1,7 +1,7 @@
 package com.slaw.howifeel.ui.heatmap
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -77,5 +77,19 @@ class HeatMapActivity : BaseActivity(),HeatmapContract.View, OnMapReadyCallback 
         Timber.d("map ready")
         presenter.start()
         this.map = map
+        updateLocationUI()
     }
+
+    private fun updateLocationUI() {
+        if (map == null) {
+            return
+        }
+        try {
+            map.isMyLocationEnabled = true
+            map.uiSettings.isMyLocationButtonEnabled = true
+        } catch (e: SecurityException) {
+            Log.e("Exception: %s", e.message)
+        }
+    }
+
 }
