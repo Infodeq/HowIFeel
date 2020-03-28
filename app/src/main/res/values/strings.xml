@@ -26,4 +26,5 @@
     <string name="ok">OK</string>
     <string name="title_location_permission">Please provide location access.</string>
     <string name="text_location_permission">Location data is used in anonymous health reports.</string>
+    <string name="skip_question">Skip question</string>
 </resources>

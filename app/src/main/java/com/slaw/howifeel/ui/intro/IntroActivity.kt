@@ -52,7 +52,7 @@ class IntroActivity : AppIntro() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
                     onSuccess = {
-                        startActivity(intentFor<HowAreYouFeelingActivity>().clearTask().newTask())
+                        startActivity(intentFor<HowAreYouFeelingActivity>("ftue" to true).clearTask().newTask())
                     }, onError = {
                         toast("Something went wrong. Please try again")
                     }

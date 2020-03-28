@@ -34,4 +34,13 @@
         android:layout_width="match_parent"
         android:textAllCaps="false"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/skip"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:text="@string/skip_question"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
