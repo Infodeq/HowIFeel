@@ -42,7 +42,6 @@ class HowAreYouFeelingActivity : BaseActivity() {
         }
         im_having_some_symptoms.setOnClickListener {
             startActivity<MainActivity>()
-            finish()
         }
     }
 
@@ -59,7 +58,6 @@ class HowAreYouFeelingActivity : BaseActivity() {
                     onComplete = {
                         im_feeling_good.isEnabled = true
                         startActivity<HeatMapActivity>()
-                        finish()
                     }, onError = {
                         im_feeling_good.isEnabled = true
                         toast(it.localizedMessage?:"Something went wrong. Please try again")
