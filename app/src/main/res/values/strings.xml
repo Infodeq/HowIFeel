@@ -26,4 +26,5 @@
     <string name="ok">OK</string>
     <string name="title_location_permission">Please provide us location access.</string>
     <string name="text_location_permission">We need location access to show your affected neighbourhood.</string>
+    <string name="skip_question">Skip question</string>
 </resources>

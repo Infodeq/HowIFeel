@@ -2,6 +2,7 @@ package com.slaw.howifeel.ui.heatmap
 
 import android.os.Bundle
 import android.util.Log
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -13,6 +14,7 @@ import com.slaw.howifeel.component.ActivityScope
 import com.slaw.howifeel.component.ApplicationComponent
 import com.slaw.howifeel.ui.base.BaseActivity
 import com.slaw.howifeel.ui.login.appComponent
+import com.slaw.howifeel.ui.main.getGPS
 import dagger.BindsInstance
 import dagger.Component
 import org.jetbrains.anko.toast
@@ -87,6 +89,16 @@ class HeatMapActivity : BaseActivity(),HeatmapContract.View, OnMapReadyCallback 
         try {
             map.isMyLocationEnabled = true
             map.uiSettings.isMyLocationButtonEnabled = true
+            // Creating a LatLng object for the current location
+            // Creating a LatLng object for the current location
+            val gps = getGPS(this)
+            val latLng = LatLng(gps[0], gps[1])
+            // Showing the current location in Google Map
+            // Showing the current location in Google Map
+            map.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+            // Zoom in the Google Map
+            // Zoom in the Google Map
+            map.animateCamera(CameraUpdateFactory.zoomTo(3.5f))
         } catch (e: SecurityException) {
             Log.e("Exception: %s", e.message)
         }

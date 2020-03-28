@@ -2,6 +2,7 @@ package com.slaw.howifeel.ui.howyoufeeling
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.slaw.howifeel.R
 import com.slaw.howifeel.data.DataManager
@@ -37,11 +38,17 @@ class HowAreYouFeelingActivity : BaseActivity() {
     }
 
     private fun setupView() {
+        if(intent.getBooleanExtra("ftue", false)){
+            skip.isVisible = false
+        }
         im_feeling_good.setOnClickListener {
             sendEmptySymptoms()
         }
         im_having_some_symptoms.setOnClickListener {
             startActivity<MainActivity>()
+        }
+        skip.setOnClickListener {
+            startActivity<HeatMapActivity>()
         }
     }
 
