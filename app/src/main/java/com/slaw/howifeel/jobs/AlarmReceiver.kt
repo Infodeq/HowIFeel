@@ -10,8 +10,7 @@ import androidx.core.app.NotificationCompat
 import com.slaw.howifeel.HowIFeelApplication
 import com.slaw.howifeel.R
 import com.slaw.howifeel.data.DataManager
-import com.slaw.howifeel.ui.login.LoginActivity
-import io.reactivex.disposables.CompositeDisposable
+import com.slaw.howifeel.ui.login.LoginFragment
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -31,7 +30,7 @@ class AlarmReceiver: BroadcastReceiver() {
     lateinit var dataManager: DataManager
     private fun setNotification(context: Context, intent: Intent) {
         val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-        val notificationIntent = Intent(context, LoginActivity::class.java).apply {
+        val notificationIntent = Intent(context, LoginFragment::class.java).apply {
 //            this.putExtra(MainActivity.OPENED_FROM_NOTIFICATION, true)
         }
         notificationIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

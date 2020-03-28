@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:fillViewport="true"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -12,39 +13,56 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="40dp"
-        android:background="@color/white"
-        tools:context=".ui.login.LoginActivity">
+        tools:context=".ui.login.LoginFragment">
 
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <com.hbb20.CountryCodePicker-->
+<!--                android:id="@+id/ccp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:ccp_autoDetectCountry="true"-->
+<!--                app:ccp_defaultNameCode="US" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/phonenumber"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:inputType="phone" />-->
+<!--        </LinearLayout>-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.hbb20.CountryCodePicker
-                android:id="@+id/ccp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:ccp_autoDetectCountry="true"
-                app:ccp_defaultNameCode="US" />
-
-            <EditText
-                android:id="@+id/phonenumber"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:inputType="phone" />
-        </LinearLayout>
-
+            android:padding="16dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:text="Just one last thing."
+            android:textColor="@color/colorPrimary"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:padding="16dp"
             android:orientation="horizontal">
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="@string/gender" />
 
             <RadioGroup
@@ -78,6 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <TextView
@@ -94,15 +114,16 @@
                 android:inputType="number"
                 android:minWidth="150dp" />
         </LinearLayout>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/primary_button"
-            android:text="@string/login"
-            android:textColor="@color/white" />
+<!--        <Button-->
+<!--            android:id="@+id/login"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:background="@drawable/primary_button"-->
+<!--            android:text="@string/login"-->
+<!--            android:textColor="@color/white" />-->
     </LinearLayout>
 
 </ScrollView>

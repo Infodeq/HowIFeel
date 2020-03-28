@@ -11,9 +11,11 @@ import com.google.maps.android.heatmaps.HeatmapTileProvider
 import com.slaw.howifeel.R
 import com.slaw.howifeel.component.ActivityScope
 import com.slaw.howifeel.component.ApplicationComponent
+import com.slaw.howifeel.ui.base.BaseActivity
 import com.slaw.howifeel.ui.login.appComponent
 import dagger.BindsInstance
 import dagger.Component
+import org.jetbrains.anko.toast
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -35,7 +37,7 @@ interface HeatMapActivityComponent {
         fun view(view: HeatmapContract.View?): Builder
     }
 }
-class HeatMapActivity : AppCompatActivity(),HeatmapContract.View, OnMapReadyCallback {
+class HeatMapActivity : BaseActivity(),HeatmapContract.View, OnMapReadyCallback {
 
     @Inject
     lateinit var presenter: HeatmapContract.Presenter
@@ -60,6 +62,10 @@ class HeatMapActivity : AppCompatActivity(),HeatmapContract.View, OnMapReadyCall
     lateinit var map: GoogleMap
     override fun showHeatmap(geoLocationList: MutableList<LatLng>) {
         locations = geoLocationList
+        if(locations.isEmpty()){
+            toast("Sorry. No data yet.")
+            return
+        }
         val mProvider = HeatmapTileProvider.Builder().data(locations)
             .build()
         val mOverlay = map

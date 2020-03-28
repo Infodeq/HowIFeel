@@ -13,7 +13,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 interface ApiManager {
-    fun login(loginRequestType: LoginRequest): Completable
+    fun login(loginRequestType: LoginRequest): Single<ApiResponse>
     fun sendOtp(otpSendRequest: OtpSendRequest): Single<ApiResponse>
     fun sendSymptom(accessToken: String, symptomRequest: SymptomRequest): Completable
     fun downloadCoordinates(): Single<Response<ResponseBody>>

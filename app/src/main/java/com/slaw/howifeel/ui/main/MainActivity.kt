@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.CompoundButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -19,6 +20,7 @@ import com.slaw.howifeel.R
 import com.slaw.howifeel.component.ActivityScope
 import com.slaw.howifeel.component.ApplicationComponent
 import com.slaw.howifeel.ui.base.BaseActivity
+import com.slaw.howifeel.ui.heatmap.HeatMapActivity
 import com.slaw.howifeel.ui.login.appComponent
 import com.slaw.howifeel.ui.thankyou.ThankyouActivity
 import dagger.BindsInstance
@@ -85,8 +87,8 @@ class MainActivity : BaseActivity(),MainActivityContract.View, CompoundButton.On
         submit.isEnabled = enable
     }
 
-    override fun openThankyouScreen() {
-        startActivity<ThankyouActivity>()
+    override fun openHeatmapActivity() {
+        startActivity<HeatMapActivity>()
         finish()
     }
 
@@ -107,7 +109,7 @@ class MainActivity : BaseActivity(),MainActivityContract.View, CompoundButton.On
         abdominal_pain.setOnCheckedChangeListener(this)
 
         submit.setOnClickListener {
-            presenter.submitClicked(getGPS(),
+            presenter.submitClicked(getGPS(this),
                 no_symptoms.isChecked,
                 cough.isChecked,
                 short_breath.isChecked, fever.isChecked, runny_nose.isChecked,
@@ -120,27 +122,7 @@ class MainActivity : BaseActivity(),MainActivityContract.View, CompoundButton.On
     override fun showMessage(message: String) {
         toast(message)
     }
-    private fun getGPS(): DoubleArray {
-        val lm = getSystemService(
-            Context.LOCATION_SERVICE
-        ) as LocationManager
-        val providers = lm.getProviders(true)
-        var l: Location? = null
-        try{
-            for (i in providers.indices.reversed()) {
-                l = lm.getLastKnownLocation(providers[i])
-                if (l != null) break
-            }
-        }catch (e: SecurityException){
-        }
 
-        val gps = DoubleArray(2)
-        if (l != null) {
-            gps[0] = l.latitude
-            gps[1] = l.longitude
-        }
-        return gps
-    }
 
     override fun onCheckedChanged(compoundButton: CompoundButton, isChecked: Boolean) {
         if(compoundButton.id!=R.id.no_symptoms){
@@ -167,4 +149,25 @@ class MainActivity : BaseActivity(),MainActivityContract.View, CompoundButton.On
     }
 
 
+}
+fun getGPS(context: Context): DoubleArray {
+    val lm = context.getSystemService(
+        Context.LOCATION_SERVICE
+    ) as LocationManager
+    val providers = lm.getProviders(true)
+    var l: Location? = null
+    try{
+        for (i in providers.indices.reversed()) {
+            l = lm.getLastKnownLocation(providers[i])
+            if (l != null) break
+        }
+    }catch (e: SecurityException){
+    }
+
+    val gps = DoubleArray(2)
+    if (l != null) {
+        gps[0] = l.latitude
+        gps[1] = l.longitude
+    }
+    return gps
 }

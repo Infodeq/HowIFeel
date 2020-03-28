@@ -17,4 +17,10 @@ data class CoarseLocation(
 	val latitude: String,
 	@field:SerializedName("longitude")
 	val longitude: String
-)
+) {
+	companion object {
+		fun fromGps(doubleArray: DoubleArray):CoarseLocation{
+			return CoarseLocation(doubleArray[0].toString(), doubleArray[1].toString())
+		}
+	}
+}

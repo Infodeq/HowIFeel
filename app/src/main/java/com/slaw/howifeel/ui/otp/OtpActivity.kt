@@ -1,9 +1,6 @@
 package com.slaw.howifeel.ui.otp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.slaw.howifeel.ui.main.MainActivity
 import com.slaw.howifeel.R
 import com.slaw.howifeel.component.ActivityScope
 import com.slaw.howifeel.component.ApplicationComponent

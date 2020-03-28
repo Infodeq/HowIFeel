@@ -15,7 +15,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 interface DataManager {
-    fun login(countryCode: String, phoneNumber: String, gender: String, yearBirth: String): Completable
+    fun login( gender: String, yearBirth: String): Single<ApiResponse>
     fun otpEntered(code: String): Single<ApiResponse>
     fun sendSymptom(symptomRequest: SymptomRequest): Completable
     fun downloadCoordinates(): Single<Response<ResponseBody>>
@@ -28,15 +28,15 @@ class DataManagerImp @Inject constructor(
     private val sharedPreferenceManager: SharedPreferenceManager
 ): DataManager {
     override fun login(
-        countryCode: String,
-        phoneNumber: String,
         gender: String,
         yearBirth: String
-    ): Completable {
+    ): Single<ApiResponse> {
         val loginRequestType =  LoginRequest(
-            phoneNumber,countryCode, gender, yearBirth
+            gender, yearBirth
         )
-        return apiManager.login(loginRequestType)
+        return apiManager.login(loginRequestType).doOnSuccess {
+            sharedPreferenceManager.clientToken = it.response.authToken
+        }
     }
 
     override fun otpEntered(code: String): Single<ApiResponse>{

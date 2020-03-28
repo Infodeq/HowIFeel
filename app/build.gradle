@@ -17,6 +17,9 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        def Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        resValue "string", "map_api_key", properties.getProperty("GOOGLE_MAP_API_KEY", "")
     }
     buildTypes {
         release {
@@ -25,7 +28,6 @@ android {
         }
     }
 }
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -35,6 +37,7 @@ dependencies {
 
     // Dagger
     implementation 'com.google.dagger:dagger:2.17'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt 'com.google.dagger:dagger-compiler:2.17'
     compileOnly 'org.glassfish:javax.annotation:10.0-b28'
 
@@ -70,6 +73,8 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.maps.android:android-maps-utils:1.0.2'
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
+
+    implementation 'com.github.AppIntro:AppIntro:5.1.0'
 
 
     testImplementation 'junit:junit:4.12'

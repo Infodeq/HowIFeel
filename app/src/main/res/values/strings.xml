@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">How I Feel</string>
+    <string name="app_name">Corona Tracker</string>
     <string name="next">Next</string>
     <string name="how_i_feel">How I Feel</string>
     <string name="dont_forget_to_log_symptoms">Please log your symptoms.</string>
     <string name="reminder_to_log_symptoms">Reminder to log symptoms</string>
-    <string name="how_are_you_feeling_today">How are you feeling today?</string>
-    <string name="i_m_feeling_good">I\'m feeling good!</string>
-    <string name="i_m_not_feeling_really_good">I\'m not feeling really good..</string>
+    <string name="how_are_you_feeling_today">How do you feel today?</string>
+    <string name="i_m_feeling_good">I\'m feeling good.</string>
+    <string name="i_m_not_feeling_really_good">I\'m under the weather</string>
     <string name="enter_the_code_you_ve_received">Enter the code you\'ve received</string>
     <string name="gender">Gender</string>
     <string name="male">Male</string>
@@ -16,6 +16,14 @@
     <string name="prefer_not_to_say">Prefer not to say</string>
     <string name="thank_you_for_your_response_please_report_back_if_you_feel_any_symptoms">Thank you for your response. Please report back if you feel any symptoms</string>
     <string name="done">Done</string>
-    <string name="about_section">"How-I-Feel" is designed by us to keep you aware of near by health threats.
+    <string name="about_section">"Corona Tracker" is designed by us to keep you aware of near by health threats.
         It\'s open-source https://github.com/Infodeq/HowIFeel and accessible to all. If you have questions, contact us at support@infodeq.com</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="we_need_location_access_to_show_your_affected_neighbourhood">We need location access to show your affected neighbourhood</string>
+    <string name="we_need_this_info">We need this info to proceed.</string>
+    <string name="ok">OK</string>
+    <string name="title_location_permission">Please provide us location access.</string>
+    <string name="text_location_permission">We need location access to show your affected neighbourhood.</string>
 </resources>

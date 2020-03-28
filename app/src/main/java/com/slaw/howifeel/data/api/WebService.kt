@@ -12,8 +12,8 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface WebService {
-    @POST("auth/register-phone")
-    fun auth(@Body loginRequest: LoginRequest): Completable
+    @POST("auth/register-guest")
+    fun auth(@Body loginRequest: LoginRequest): Single<ApiResponse>
 
     @POST("auth/register-phone-ack/")
     fun sendOtp(@Body otpSendRequest: OtpSendRequest): Single<ApiResponse>

@@ -12,17 +12,18 @@
     <TextView
         android:textSize="24sp"
         android:gravity="center"
-        android:textColor="@color/blueGrey700"
+        android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/how_are_you_feeling_today"/>
     <Button
         android:id="@+id/im_feeling_good"
         android:layout_marginTop="16dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/primary_button"
         android:textColor="@color/white"
         android:text="@string/i_m_feeling_good"
         android:layout_width="match_parent"
+        android:textAllCaps="false"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/im_having_some_symptoms"
@@ -31,5 +32,6 @@
         android:layout_marginTop="16dp"
         android:text="@string/i_m_not_feeling_really_good"
         android:layout_width="match_parent"
+        android:textAllCaps="false"
         android:layout_height="wrap_content"/>
 </LinearLayout>
