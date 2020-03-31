@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:895202496249:android:507abc6d8c1936f9035c28",
+        "android_client_info": {
+          "package_name": "com.infodeq.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895202496249-iflqlfg4mrucvrq7scqv41hoa3n6m92v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn6C2QlGRBn5MmnZWVrUEXSgAtOvPB5U4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895202496249-iflqlfg4mrucvrq7scqv41hoa3n6m92v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:895202496249:android:e47286231a39c61c035c28",
         "android_client_info": {
           "package_name": "com.slaw.howifeel"

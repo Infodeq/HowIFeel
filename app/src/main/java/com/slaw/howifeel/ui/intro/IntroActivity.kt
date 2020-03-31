@@ -2,7 +2,6 @@ package com.slaw.howifeel.ui.intro
 
 import android.os.Bundle
 import com.github.paolorotolo.appintro.AppIntro
-import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
 import com.slaw.howifeel.data.DataManager
 import com.slaw.howifeel.ui.howyoufeeling.HowAreYouFeelingActivity
 import com.slaw.howifeel.ui.login.LoginFragment
@@ -31,7 +30,7 @@ class IntroActivity : AppIntro() {
             showPagerIndicator(true)
             showSeparator(true)
 
-            addSlide(CoronaIntroFragment())
+            addSlide(OnboardIntroFragment())
             addSlide(ProvideLocationFragment())
             addSlide(LoginFragment())
 

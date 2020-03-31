@@ -8,7 +8,7 @@
     android:gravity="center"
     android:background="@color/colorPrimary"
     android:layout_gravity="center"
-    tools:context=".ui.intro.CoronaIntroFragment">
+    tools:context=".ui.intro.OnboardIntroFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -19,6 +19,6 @@
         android:layout_margin="16dp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:text="Track spread of COVID-19\nAvoid affected areas." />
+        android:text="@string/track_spread_of_diseases_navoid_affected_areas" />
 
 </LinearLayout>

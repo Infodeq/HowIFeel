@@ -48,7 +48,7 @@
             android:textSize="24sp"
             android:background="@color/white"
             android:layout_height="wrap_content"
-            android:text="Just one last thing."
+            android:text="@string/just_one_last_thing"
             android:textColor="@color/colorPrimary"/>
         <LinearLayout
             android:layout_width="match_parent"

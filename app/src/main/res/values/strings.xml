@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">How I Feel</string>
+    <string name="app_name">InfoDeq</string>
     <string name="next">Next</string>
     <string name="how_i_feel">How I Feel</string>
     <string name="dont_forget_to_log_symptoms">Please log your symptoms.</string>
@@ -16,7 +16,7 @@
     <string name="prefer_not_to_say">Prefer not to say</string>
     <string name="thank_you_for_your_response_please_report_back_if_you_feel_any_symptoms">Thank you for your response. Please report back if you feel any symptoms</string>
     <string name="done">Done</string>
-    <string name="about_section">"How I Feel" is designed by us to keep you aware of near by health threats.
+    <string name="about_section">InfoDeq is designed by us to keep you aware of near by health threats.
         It\'s open-source https://github.com/Infodeq/HowIFeel and accessible to all. If you have questions, contact us at support@infodeq.com</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -27,4 +27,6 @@
     <string name="title_location_permission">Please provide location access.</string>
     <string name="text_location_permission">Location data is used in anonymous health reports.</string>
     <string name="skip_question">Skip question</string>
+    <string name="just_one_last_thing">Just one last thing.</string>
+    <string name="track_spread_of_diseases_navoid_affected_areas">Track spread of health-threats\nAvoid affected areas.</string>
 </resources>

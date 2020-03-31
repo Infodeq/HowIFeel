@@ -10,11 +10,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.slaw.howifeel"
+        applicationId "com.infodeq.android"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 5
-        versionName "1.4"
+        versionCode 1
+        versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def Properties properties = new Properties()
